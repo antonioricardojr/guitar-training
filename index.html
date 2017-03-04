@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <title>Guitar Training</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body ng-controller="ExerciseController as ctrl">
+    <div>
+        {{ctrl.seq}}
+        <button ng-click="ctrl.generateSequence()">Generate Sequence</button>
+    </div>
+</body>
+
+</html>

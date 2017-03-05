@@ -1,0 +1,30 @@
+{
+  "name": "guitar-training",
+  "homepage": "https://github.com/antonioricardojr/guitar-training",
+  "authors": [
+    "Antonio Marques Jr. <antonioricardojr@gmail.com>"
+  ],
+  "description": "A simple application to guitar training",
+  "main": "index.html",
+  "keywords": [
+    "guitar",
+    "training",
+    "skills",
+    "techniques"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-strap": "^2.3.12",
+    "angular": "^1.6.2",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

@@ -1,1 +1,1 @@
-var app = angular.module( 'app', [ 'mgcrea.ngStrap' ] );
+var app = angular.module( 'app', [ 'mgcrea.ngStrap', 'ngAudio' ] );

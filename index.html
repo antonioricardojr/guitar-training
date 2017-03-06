@@ -8,37 +8,13 @@
 
 <body>
     <div class="row">
-        <div class="col-md-offset-4 col-md-2">
+        <div class="col-md-offset-5 col-md-2">
             <sequence-generator></sequence-generator>
         </div>
-        <div class="col-md-2 col-md-offset-4" ng-controller="MetronomyController as ctrl">
-            <div class="form-group">
-                <label for="beats">Beats:</label>
-                <select class="form-control" id="beats" ng-model="ctrl.beats">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                </select>
-            </div>
-            <label for="bpm">bpm</label>
-            <select class="form-control" id="bpm" ng-model="ctrl.bpm">
-                <option>60</option>
-                <option>80</option>
-                <option>90</option>
-                <option>100</option>
-                <option>110</option>
-                <option>120</option>
-                <option>130</option>
-                <option>140</option>
-                <option>180</option>
-            </select>
-            <button type="button" class="btn btn-primary" ng-click="ctrl.play()">play</button>
-            <button type="button" class="btn btn-primary" ng-click="ctrl.stop()">stop</button>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-5 col-md-2">
+            <metronomy></metronomy>
         </div>
     </div>
 </body>
@@ -56,5 +32,6 @@
 <script src="js/controllers/MetronomyController.js"></script>
 <!-- directives -->
 <script src="js/directives/sequenceGenerator.js"></script>
+<script src="js/directives/metronomy.js"></script>
 
 </html>

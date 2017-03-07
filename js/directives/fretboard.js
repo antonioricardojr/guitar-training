@@ -1,7 +1,5 @@
 var app = angular.module( 'app' );
 
-
-
 app.directive( 'fretboard', [ function ( ) {
     // Runs during compile
     return {

@@ -137,6 +137,7 @@ h1 {
 .guitar-neck .notes .mask ul {
     position: relative;
     float: left;
+    right: 35px;
 }
 
 .guitar-neck .notes .mask ul li {

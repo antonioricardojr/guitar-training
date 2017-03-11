@@ -36,4 +36,10 @@ app.controller( 'MetronomeController', [ 'ngAudio', function ( ngAudio ) {
         clearInterval( self.interval );
         clearInterval( self.timeInterval );
     }
+
+    self.reset = function ( ) {
+        self.stop( );
+        self.play( );
+    }
+
 } ] );

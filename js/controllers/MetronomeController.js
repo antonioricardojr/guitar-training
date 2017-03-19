@@ -1,6 +1,6 @@
 var app = angular.module( 'app' );
 
-app.controller( 'MetronomeController', [ 'ngAudio', '$scope', 'MetronomeService', function ( ngAudio, $scope, MetronomeService ) {
+app.controller( 'MetronomeController', [ 'MetronomeService', function ( MetronomeService ) {
 
     var self = this;
 

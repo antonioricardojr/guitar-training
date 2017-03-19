@@ -1,45 +1,26 @@
 var app = angular.module( 'app' );
 
-app.controller( 'MetronomeController', [ 'ngAudio', function ( ngAudio ) {
+app.controller( 'MetronomeController', [ 'MetronomeService', function ( MetronomeService ) {
 
     var self = this;
 
-    self.tic = ngAudio.load( "assets/sounds/tic.mp3" );
-    self.tac = ngAudio.load( "assets/sounds/tac.mp3" );
-
-    self.interval;
-    self.timeInterval;
-
-    self.beats = 4;
-    self.bpm = 120;
+    self.beats = MetronomeService.beats;
+    self.bpm = MetronomeService.bpm;
 
     self.play = function ( ) {
-        self.timePlay( );
-        self.interval = setInterval( function ( ) {
-            self.timePlay( );
-        }, self.beats * ( 60 / self.bpm ) * 1000 );
+        MetronomeService.play( );
     }
 
     self.timePlay = function ( ) {
-        self.tic.play( );
-
-        var ticCount = 0;
-        self.timeInterval = setInterval( function ( ) {
-            if ( ticCount < self.beats - 1 ) {
-                self.tac.play( );
-                ticCount++;
-            }
-        }, ( 60 / self.bpm ) * 1000 );
+        MetronomeService.timePlay( );
     }
 
     self.stop = function ( ) {
-        clearInterval( self.interval );
-        clearInterval( self.timeInterval );
+        MetronomeService.stop( );
     }
 
     self.reset = function ( ) {
-        self.stop( );
-        self.play( );
+        MetronomeService.reset( self.beats, self.bpm );
     }
 
 } ] );

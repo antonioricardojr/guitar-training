@@ -6,19 +6,36 @@ app.directive( 'fretboard', [ function ( ) {
         // name: '',
         // priority: 1,
         // terminal: true,
-        // scope: {}, // {} = isolate, true = child, false/undefined = no change
-        // controller: function($scope, $element, $attrs, $transclude) {},
         // require: 'ngModel', // Array = multiple requires, ? = optional, ^ = check parent elements
+        scope: {
+            beats: '=beats'
+        },
         restrict: 'EA', // E = Element, A = Attribute, C = Class, M = Comment
         // template: '',
         templateUrl: 'views/fretboard.html',
         // replace: true,
         // transclude: true,
         // compile: function(tElement, tAttrs, function transclude(function(scope, cloneLinkingFn){ return function linking(scope, elm, attrs){}})),
-        link: function ( $scope, iElm, iAttrs, controller ) {
+        link: function ( scope, elem, attrs, controller ) {
             var slideSpeed = 300;
             var noteToShow = "All";
             var canClick = true;
+
+
+            var printTest = function ( ) {
+                console.log( 'print test' );
+            }
+
+            // Watch the field filter in the directive html
+            scope.$watch( function ( ) {
+                return scope.beats;
+            }, function ( newValue, oldValue ) {
+                if ( newValue ) { // If there is a value new search will be made
+                    printTest( );
+                }
+            } );
+
+
 
             var notes = {
                 e: [ 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E' ],
